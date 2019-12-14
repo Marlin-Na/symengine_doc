@@ -16,3 +16,7 @@ mv symengine.R-"$COMMIT" src-"$COMMIT"
 
 cd src-"$COMMIT"
 ./tools/build_doc_site.R ../$COMMIT
+
+rm "$COMMIT".tar.gz
+rm -r src-"$COMMIT"
+
