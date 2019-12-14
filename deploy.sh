@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -x
+set -e
 
 if [ "$1" = "" ]; then
     echo "Usage: ./deploy.sh commit"
