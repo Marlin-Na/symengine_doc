@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Some Special Math Functions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for LCM"><tr><td>LCM</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Some Special Math Functions</h2>
+
+<h3>Description</h3>
+
+<p>These are some special mathematical functions and functions
+related to number theory.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+LCM(a, b)
+
+GCD(a, b)
+
+nextprime(a)
+
+factorial(x)
+
+## S4 method for signature 'SymEngineDataType'
+factorial(x)
+
+choose(n, k)
+
+## S4 method for signature 'SymEngineDataType'
+choose(n, k)
+
+zeta(a)
+
+lambertw(a)
+
+dirichlet_eta(a)
+
+erf(a)
+
+erfc(a)
+
+## S4 method for signature 'SymEngineDataType,SymEngineDataType'
+atan2(y, x)
+
+kronecker_delta(x, y)
+
+lowergamma(x, a)
+
+uppergamma(x, a)
+
+## S4 method for signature 'SymEngineDataType,SymEngineDataType'
+beta(a, b)
+
+## S4 method for signature 'SymEngineDataType'
+psigamma(x, deriv = 0L)
+
+## S4 method for signature 'SymEngineDataType'
+digamma(x)
+
+## S4 method for signature 'SymEngineDataType'
+trigamma(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>a, b, x, y, n, k, deriv</code></td>
+<td>
+<p>SymEngine objects (<code>Basic</code>/<code>VecBasic</code>/<code>DenseMatrix</code>).
+Some functions require Integer type.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Same type as input.
+</p>
+
+
+</body></html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Evaluating a SymEngine Object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for evalf"><tr><td>evalf</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Evaluating a SymEngine Object</h2>
+
+<h3>Description</h3>
+
+<p>This function will evaluate a SymEngine object to its &quot;numerical&quot; form
+with given precision. User may further use <code>as.double()</code> to convert
+to R value.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+evalf(expr, bits = 53L, complex = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>expr</code></td>
+<td>
+<p>A SymEngine object.</p>
+</td></tr>
+<tr valign="top"><td><code>bits</code></td>
+<td>
+<p>The precision.</p>
+</td></tr>
+<tr valign="top"><td><code>complex</code></td>
+<td>
+<p>Whether or not to be evaluated as a complex number.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Same type as <code>expr</code> argument.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+expr &lt;- Constant("pi")
+evalf(expr)
+as.double(evalf(expr)) == pi
+</pre>
+
+
+</body></html>

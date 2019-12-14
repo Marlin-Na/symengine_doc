@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Methods Related to DenseMatrix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for as.matrix.DenseMatrix"><tr><td>as.matrix.DenseMatrix</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Methods Related to DenseMatrix</h2>
+
+<h3>Description</h3>
+
+<p>These are miscellaneous S3/S4 methods defined for <code>DenseMatrix</code> class.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'DenseMatrix'
+as.matrix(x, ...)
+
+## S4 method for signature 'DenseMatrix'
+dim(x)
+
+## S4 replacement method for signature 'DenseMatrix'
+dim(x) &lt;- value
+
+## S4 replacement method for signature 'VecBasic'
+dim(x) &lt;- value
+
+## S4 replacement method for signature 'Basic'
+dim(x) &lt;- value
+
+## S4 replacement method for signature 'DenseMatrix'
+dimnames(x) &lt;- value
+
+## S4 method for signature 'DenseMatrix'
+dimnames(x)
+
+## S4 method for signature 'DenseMatrix'
+length(x)
+
+## S4 method for signature 'DenseMatrix,ANY'
+x[[i, j, ...]]
+
+## S4 replacement method for signature 'DenseMatrix'
+x[[i, j, ...]] &lt;- value
+
+## S4 method for signature 'DenseMatrix'
+x[i, j, ..., drop = TRUE]
+
+## S4 replacement method for signature 'DenseMatrix'
+x[i, j, ...] &lt;- value
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A DenseMatrix object.</p>
+</td></tr>
+<tr valign="top"><td><code>i, j, value, ..., drop</code></td>
+<td>
+<p>Arguments for subsetting, assignment or replacing.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Same or similar with the generics of these methods.
+</p>
+
+
+</body></html>

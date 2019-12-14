@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Some Conversion Methods</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for as.character,Basic-method"><tr><td>as.character,Basic-method</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Some Conversion Methods</h2>
+
+<h3>Description</h3>
+
+<p>Miscellaneous S4 methods defined for converting a <code>Basic</code> or
+<code>VecBasic</code> object to R number/string/language object.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'Basic'
+as.character(x)
+
+## S4 method for signature 'Basic'
+as.numeric(x)
+
+## S4 method for signature 'Basic'
+as.integer(x)
+
+## S4 method for signature 'VecBasic'
+as.character(x)
+
+## S4 method for signature 'VecBasic'
+as.numeric(x)
+
+## S4 method for signature 'VecBasic'
+as.integer(x)
+
+as.language(x)
+
+## S4 method for signature 'Basic'
+as.language(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The object to be converted.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Same as default methods of these generics. <code>as.language()</code>
+may return <code>symbol</code>, <code>integer</code>, <code>double</code> or <code>call</code>.
+</p>
+
+
+</body></html>

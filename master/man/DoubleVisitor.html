@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Double Visitor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for DoubleVisitor"><tr><td>DoubleVisitor</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Double Visitor</h2>
+
+<h3>Description</h3>
+
+<p>Construct <code>DoubleVisitor</code> object from <code>Basic</code> or <code>VecBasic</code>
+and use it to numerically evaluate symbolic expressions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+DoubleVisitor(exprs, args, perform_cse = TRUE, llvm_opt_level = if
+  (symengine_have_component("llvm")) 3L else -1L)
+
+visitor_call(visitor, input, do_transpose = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>exprs</code></td>
+<td>
+<p>A Basic object or a VecBasic object to be evaluated.</p>
+</td></tr>
+<tr valign="top"><td><code>args</code></td>
+<td>
+<p>A VecBasic object indicating order of input arguments. Can be missing.</p>
+</td></tr>
+<tr valign="top"><td><code>perform_cse</code></td>
+<td>
+<p>Boolean.</p>
+</td></tr>
+<tr valign="top"><td><code>llvm_opt_level</code></td>
+<td>
+<p>Integer. If negative, it will return a <code>LambdaDoubleVisitor</code>,
+otherwise it will return a <code>LLVMDoubleVisitor</code> with the specified optimization level.</p>
+</td></tr>
+<tr valign="top"><td><code>visitor</code></td>
+<td>
+<p>A DoubleVisitor object.</p>
+</td></tr>
+<tr valign="top"><td><code>input</code></td>
+<td>
+<p>A numeric matrix. Each row is input value for one argument.</p>
+</td></tr>
+<tr valign="top"><td><code>do_transpose</code></td>
+<td>
+<p>Boolean. Matters when <code>exprs</code> is a VecBasic.
+If true, output will have each column for one symbolic expression, otherwise
+each row for one symbolic expression.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>DoubleVisitor</code> constructs the visitor and visitor itself is callable.
+<code>visitor_call</code> is the low level function to call the visitor with input.
+</p>
+
+
+<h3>Value</h3>
+
+<p><code>DoubleVisitor</code> returns a callable <code>LambdaDoubleVisitor</code> or
+<code>LLVMDoubleVisitor</code>. <code>visitor_call</code> returns a numeric vector or matrix.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>lambdify</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+a &lt;- S("a")
+b &lt;- S("b")
+c &lt;- S("c")
+vec &lt;- c(log(a), log(a)/log(b) + c)
+func &lt;- DoubleVisitor(vec, args = c(a, b, c))
+args(func)
+
+## Use closure
+func(a = 1:10, b = 10:1, c = 1.43)
+
+## Use visitor_call
+input &lt;- rbind(a = 1:10, b = 10:1, c = 1.43)
+visitor_call(func, input, do_transpose = TRUE)
+</pre>
+
+
+</body></html>

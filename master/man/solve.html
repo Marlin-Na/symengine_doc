@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Solve Symbolic Equations</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for solve"><tr><td>solve</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Solve Symbolic Equations</h2>
+
+<h3>Description</h3>
+
+<p>Solve system of symbolic equations or solve a polynomial equation.
+Depending on types of arguments, it supports different modes.
+See Details and Examples.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+solve(a, b, ...)
+
+## S4 method for signature 'DenseMatrix'
+solve(a, b, ...)
+
+## S4 method for signature 'VecBasic'
+solve(a, b, ...)
+
+## S4 method for signature 'Basic'
+solve(a, b, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>a, b</code></td>
+<td>
+<p>Objects, see details.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Not used.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>solve</code> is a generic function dispatched on the class of the first argument.
+</p>
+
+<ul>
+<li>
+<p>If <code>a</code> is a (square) DenseMatrix, it solves the equation
+<code>a %*% x = b</code> for <code>x</code>. (similar to <code>solve.default()</code>)
+
+</p>
+</li>
+<li>
+<p>If <code>a</code> is a DenseMatrix and <code>b</code> is missing, <code>b</code> is
+taken to be an identity matrix and <code>solve</code> will return the
+inverse of <code>a</code>. (similar to <code>solve.default()</code>)
+
+</p>
+</li>
+<li>
+<p>If <code>a</code> is a VecBasic, it solves the system of linear equations
+represented by <code>a</code> with regards to symbols represented in <code>b</code>.
+
+</p>
+</li>
+<li>
+<p>If <code>a</code> is a Basic, it solves the polynomial equation represented by
+a with regards to the symbol represented in <code>b</code>.
+
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>A <code>VecBasic</code> or <code>DenseMatrix</code> S4 object.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+## Inverse of a symbolic matrix
+mat &lt;- Matrix(c("A", "B", "C", "D"), 2)
+solve(mat)
+
+## Solve a %*% x == b
+a &lt;- Matrix(c("a11", "a21", "a12", "a22"), 2) # a is a 2x2 matrix
+b &lt;- Vector("b1", "b2")                       # b is a length 2 vector
+solve(a, b)                                   # Solution of x (2x1 matrix)
+
+## Solve the system of linear equations represented by a with regards to
+## symbols in b
+a &lt;- Vector(~ -2*x + y - 4,  # A system of linear equations
+            ~  3*x + y - 9)
+b &lt;- Vector(~x, ~y)          # Symbols to solve (x and y)
+solve(a, b)                  # Solution of x and y
+</pre>
+
+
+</body></html>

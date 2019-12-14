@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Converting R object to Basic</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for S"><tr><td>S</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Converting R object to Basic</h2>
+
+<h3>Description</h3>
+
+<p>'S' and 'Basic' converts a R object to a Basic object. 'Symbol', 'Real' and 'Constant'
+construct a Basic object with type &quot;Symbol&quot;, &quot;RealDouble&quot;/&quot;RealMPFR&quot;
+and &quot;Constant&quot;, respectively.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+S(x)
+
+Basic(x)
+
+Symbol(x)
+
+Constant(x)
+
+Real(x, prec = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A R object.</p>
+</td></tr>
+<tr valign="top"><td><code>prec</code></td>
+<td>
+<p>If supplied, the argument will be parsed as a Basic object of type 
+RealMPFR.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>For double vector, 'S' will check whether it is a whole number &ndash; if true,
+it will be converted to a Integer type. If this behavior is not desired,
+you can use 'Basic' or 'as(x, &quot;Basic&quot;)'.
+</p>
+
+
+<h3>Value</h3>
+
+<p>A <code>Basic</code> S4 object.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+S("(x + y)^2")
+S(~ (x + y)^2)
+S(NaN)
+S(42)
+Basic(42)
+as(42, "Basic")
+pi &lt;- Constant("pi")
+evalf(pi)
+if (symengine_have_component("mpfr"))
+    evalf(pi, 300)
+Real(42)
+if (symengine_have_component("mpfr"))
+    Real(42, prec = 140)
+</pre>
+
+
+</body></html>

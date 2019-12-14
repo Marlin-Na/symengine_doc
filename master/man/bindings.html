@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Bindings for Operators and Math Functions</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for ==,Basic,Basic-method"><tr><td>==,Basic,Basic-method</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Bindings for Operators and Math Functions</h2>
+
+<h3>Description</h3>
+
+<p>These are S4 methods defined for <code>Basic</code>, <code>VecBasic</code>
+and <code>DenseMatrix</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'Basic,Basic'
+e1 == e2
+
+## S4 method for signature 'Basic,Basic'
+e1 != e2
+
+## S4 method for signature 'SymEngineDataType,SymEngineDataType'
+Arith(e1, e2)
+
+## S4 method for signature 'SymEngineDataType,vector'
+Arith(e1, e2)
+
+## S4 method for signature 'vector,SymEngineDataType'
+Arith(e1, e2)
+
+## S4 method for signature 'SymEngineDataType,missing'
+e1 - e2
+
+## S4 method for signature 'SymEngineDataType,missing'
+e1 + e2
+
+## S4 method for signature 'DenseMatrix,DenseMatrix'
+x %*% y
+
+## S4 method for signature 'VecBasic,VecBasic'
+x %*% y
+
+## S4 method for signature 'DenseMatrix,VecBasic'
+x %*% y
+
+## S4 method for signature 'DenseMatrix,vector'
+x %*% y
+
+## S4 method for signature 'VecBasic,DenseMatrix'
+x %*% y
+
+## S4 method for signature 'vector,DenseMatrix'
+x %*% y
+
+## S4 method for signature 'SymEngineDataType'
+Math(x)
+
+## S4 method for signature 'SymEngineDataType'
+sinpi(x)
+
+## S4 method for signature 'SymEngineDataType'
+cospi(x)
+
+## S4 method for signature 'SymEngineDataType'
+tanpi(x)
+
+## S4 method for signature 'SymEngineDataType'
+log(x, base)
+
+## S4 method for signature 'SymEngineDataType'
+log2(x)
+
+## S4 method for signature 'SymEngineDataType'
+log10(x)
+
+## S4 method for signature 'SymEngineDataType'
+log1p(x)
+
+## S4 method for signature 'SymEngineDataType'
+expm1(x)
+
+## S4 method for signature 'SymEngineDataType'
+sum(x, ..., na.rm = FALSE)
+
+## S4 method for signature 'SymEngineDataType'
+prod(x, ..., na.rm = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>e1, e2, x, y, base, ...</code></td>
+<td>
+<p>Objects.</p>
+</td></tr>
+<tr valign="top"><td><code>na.rm</code></td>
+<td>
+<p>Ignored</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p><code>==</code> and <code>!=</code> will return a logical vector. Other
+functions will return a <code>Basic</code>, <code>VecBasic</code> or <code>DenseMatrix</code>.
+</p>
+
+
+</body></html>

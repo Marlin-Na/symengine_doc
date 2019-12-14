@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Get Information about Basic Object</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for get_type"><tr><td>get_type</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Get Information about Basic Object</h2>
+
+<h3>Description</h3>
+
+<p>These functions are used to access the underlying properties of a
+<code>Basic</code> object.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+get_type(x)
+
+get_args(x)
+
+get_hash(x)
+
+get_str(x)
+
+free_symbols(x)
+
+function_symbols(x)
+
+get_name(x)
+
+get_prec(x)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A Basic object.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+
+<dl>
+<dt>get_type</dt><dd><p>Return the internal type</p>
+</dd>
+<dt>get_args</dt><dd><p>Return the internal arguments of a Basic object as a VecBasic</p>
+</dd>
+<dt>get_hash</dt><dd><p>Return the hash as a string</p>
+</dd>
+<dt>get_str</dt><dd><p>Return the string representation of the Basic object</p>
+</dd>
+<dt>free_symbols</dt><dd><p>Return free symbols in an expression</p>
+</dd>
+<dt>function_symbols</dt><dd><p>Return function symbols in an expression</p>
+</dd>
+<dt>get_name</dt><dd><p>Return name of a Basic object of type FunctionSymbol</p>
+</dd>
+<dt>get_prec</dt><dd><p>Return precision of a Basic object of type RealMPFR</p>
+</dd>
+</dl>
+
+
+
+<h3>Value</h3>
+
+
+<ul>
+<li> <p><code>get_type()</code>, <code>get_hash()</code>, <code>get_str()</code>, <code>get_name()</code>
+return a string.
+</p>
+</li>
+<li> <p><code>get_args()</code>, <code>free_symbols()</code>, <code>function_symbols()</code>
+return a <code>VecBasic</code> S4 object.
+</p>
+</li>
+<li> <p><code>get_prec()</code> returns an integer.
+</p>
+</li></ul>
+
+
+
+</body></html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Symbolic Vector</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for Vector"><tr><td>Vector</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Symbolic Vector</h2>
+
+<h3>Description</h3>
+
+<p>A symbolic vector is represented by <code>VecBasic</code> S4 class.
+<code>Vector</code> and <code>V</code> are constructors of <code>VecBasic</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+Vector(x, ...)
+
+V(...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x, ...</code></td>
+<td>
+<p>R objects.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>There are some differences between <code>Vector</code> and <code>V</code>.
+</p>
+
+<ul>
+<li>
+<p>For double values, <code>V</code> will check whether they are
+whole number, and convert them to integer if so.
+<code>Vector</code> will not.
+
+</p>
+</li>
+<li>
+<p><code>V</code> does not accept &quot;non-scalar&quot; arguments,
+like <code>Vector(c(1,2,3))</code>.
+
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>A <code>VecBasic</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+a &lt;- S("a")
+b &lt;- S("b")
+Vector(a, b, a + b, 42L)
+Vector(list(a, b, 42L))
+
+Vector(1,2,a)
+V(1,2,a)
+</pre>
+
+
+</body></html>

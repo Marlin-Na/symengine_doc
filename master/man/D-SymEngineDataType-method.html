@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Derivatives of a Symbolic Expression</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for D,SymEngineDataType-method"><tr><td>D,SymEngineDataType-method</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Derivatives of a Symbolic Expression</h2>
+
+<h3>Description</h3>
+
+<p>S4 method of <code>D</code> defined for <code>Basic</code>. It returns
+the derivative of <code>expr</code> with regards to <code>name</code>.
+<code>name</code> may be missing if there is only one symbol in
+<code>expr</code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S4 method for signature 'SymEngineDataType'
+D(expr, name)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>expr</code></td>
+<td>
+<p>A Basic object.</p>
+</td></tr>
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>A character vector or a Basic object of type Symbol.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Same type as <code>expr</code> argument.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+expr &lt;- S(~ exp(x))
+D(expr) == expr
+expr &lt;- S(~ x^2 + 2*x + 1)
+D(expr)
+</pre>
+
+
+</body></html>

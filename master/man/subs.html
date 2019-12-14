@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Substitute Expressions in SymEngine Objects</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for subs"><tr><td>subs</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Substitute Expressions in SymEngine Objects</h2>
+
+<h3>Description</h3>
+
+<p>This function will substitute <code>expr</code> with pairs of
+values in the dot arguments. The length of dot arguments must
+be a even number.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+subs(expr, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>expr</code></td>
+<td>
+<p>A <code>Basic</code> S4 object.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Pairs of Basic objects or values can be converted to <code>Basic</code>.
+In the order of &quot;from1, to1, from2, to2, ...&quot;.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Same type as <code>expr</code>.
+</p>
+
+
+</body></html>
