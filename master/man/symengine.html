@@ -27,7 +27,7 @@ expressions.
 </p>
 <p><code>symengine</code> uses the S4 dispatch system extensively to differentiate between calculation
 over normal R objects and symengine objects. For example, the semantics of <code>sin</code> in
-<code>expr &lt;- Symbol("x"); sin(expr)</code> is different from the <code>sin</code> used over normal R numbers.
+<code style="white-space: pre;">expr &lt;- Symbol("x"); sin(expr)</code> is different from the <code>sin</code> used over normal R numbers.
 </p>
 
 
@@ -62,10 +62,10 @@ classes.
 </p>
 
 <ul>
-<li> <p><code>[</code>, <code>[[</code>, <code>[&lt;-</code> and <code>[[&lt;-</code> for subsetting and assignment.
+<li> <p><code>[</code>, <code>[[</code>, <code style="white-space: pre;">[&lt;-</code> and <code style="white-space: pre;">[[&lt;-</code> for subsetting and assignment.
 </p>
 </li>
-<li> <p><code>dim()</code>, <code>dim&lt;-</code>, <code>length()</code>, <code>t()</code>, <code>det()</code>, <code>rbind()</code>, <code>cbind()</code>, <code>c()</code>, <code>rep()</code>
+<li> <p><code>dim()</code>, <code style="white-space: pre;">dim&lt;-</code>, <code>length()</code>, <code>t()</code>, <code>det()</code>, <code>rbind()</code>, <code>cbind()</code>, <code>c()</code>, <code>rep()</code>
 </p>
 </li>
 <li> <p><code>%*%</code> for matrix multiplication
